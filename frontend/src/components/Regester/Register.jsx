@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import TopNavigation from '../TopNavigation/TopNavigation';
 import MainNavigation from '../MainNavigation/MainNavigation';
 import Footer from '../Footer/Footer';
@@ -10,12 +10,11 @@ export default function Register() {
     firstName: '',
     lastName: '',
     email: '',
-    password: '',
-    confirmPassword: '',
-    phone: ''
+    phone: '',
+    dob: '',
+    gender: ''
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -27,30 +26,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
-
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || 
-        !formData.password || !formData.confirmPassword) {
-      setError('Please fill in all required fields');
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters long');
-      return;
-    }
-
-    // TODO: Implement actual registration logic
-    console.log('Registration attempt:', formData);
-    
-    // Simulate registration success
-    alert('Registration functionality will be implemented with backend integration');
-    // navigate('/login');
+    // Frontend only - no functionality
   };
 
   return (
@@ -58,15 +34,16 @@ export default function Register() {
       <TopNavigation />
       <MainNavigation />
       
-      <div className="register-container">
-        <div className="register-box">
-          <h2>Create Your Account</h2>
-          <p className="register-subtitle">Join us today and get started with our services</p>
-          
-          {error && <div className="error-message">{error}</div>}
-          
-          <form onSubmit={handleSubmit} className="register-form">
-            <div className="form-row">
+      <div className="register-wrapper">
+        <div className="register-container">
+          <div className="register-box">
+            <div className="register-header">
+              <h2>Sign up</h2>
+            </div>
+            
+            {error && <div className="error-message">{error}</div>}
+            
+            <form onSubmit={handleSubmit} className="register-form">
               <div className="form-group">
                 <label htmlFor="firstName">First Name</label>
                 <input
@@ -92,74 +69,79 @@ export default function Register() {
                   required
                 />
               </div>
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number (Optional)</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Enter your phone number"
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Create a password (min 6 characters)"
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                placeholder="Confirm your password"
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label className="terms-checkbox">
-                <input type="checkbox" required />
-                <span>I agree to the <Link to="/terms">Terms and Conditions</Link> and <Link to="/privacy">Privacy Policy</Link></span>
-              </label>
-            </div>
-            
-            <button type="submit" className="btn-register">
-              Create Account
-            </button>
+              
+              <div className="form-group">
+                <label htmlFor="email">Enter your email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="phone">Enter your phone number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  maxLength="10"
+                  required
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="dob">Enter your DOB</label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  value={formData.dob}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="gender">Select Gender</label>
+                <select
+                  id="gender"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  required
+                  className="gender-select"
+                >
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div className="form-group">
+                <label className="terms-checkbox">
+                  <input type="checkbox" required />
+                  <span>By continuing, I agree to the <Link to="/terms">Terms & Conditions</Link> & <Link to="/privacy">Privacy Policy</Link>.</span>
+                </label>
+              </div>
+              
+              <button type="submit" className="btn-signup">
+                Sign Up
+              </button>
+            </form>
             
             <div className="login-link">
-              <p>Already have an account? <Link to="/login">Login here</Link></p>
+              <p>Existing user? <Link to="/login">Sign in</Link></p>
             </div>
-          </form>
+          </div>
         </div>
       </div>
       

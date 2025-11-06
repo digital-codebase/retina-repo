@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TopNavigation from '../TopNavigation/TopNavigation';
 import MainNavigation from '../MainNavigation/MainNavigation';
@@ -11,6 +11,31 @@ export default function Login() {
     captcha: ''
   });
   const [error, setError] = useState('');
+  const [captchaCode, setCaptchaCode] = useState('');
+
+  // Generate random captcha code
+  const generateCaptcha = () => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  };
+
+  // Initialize captcha on component mount
+  useEffect(() => {
+    setCaptchaCode(generateCaptcha());
+  }, []);
+
+  // Refresh captcha
+  const handleRefreshCaptcha = () => {
+    setCaptchaCode(generateCaptcha());
+    setFormData({
+      ...formData,
+      captcha: '' // Clear the input field when refreshing
+    });
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -46,14 +71,14 @@ export default function Login() {
             
             <form onSubmit={handleSubmit} className="login-form">
               <div className="form-group">
-                <label htmlFor="mobile">Mobile Number</label>
+                <label htmlFor="mobile">Email Address</label>
                 <input
-                  type="tel"
-                  id="mobile"
-                  name="mobile"
-                  value={formData.mobile}
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter your mobile number"
+                  placeholder="Enter your email address"
                   maxLength="10"
                   required
                 />
@@ -64,9 +89,14 @@ export default function Login() {
                 <div className="captcha-wrapper">
                   <div className="captcha-image">
                     <div className="captcha-placeholder">
-                      <span>ABC123</span>
+                      <span>{captchaCode}</span>
                     </div>
-                    <button type="button" className="captcha-refresh" title="Refresh Captcha">
+                    <button 
+                      type="button" 
+                      className="captcha-refresh" 
+                      onClick={handleRefreshCaptcha}
+                      title="Refresh Captcha"
+                    >
                       🔄
                     </button>
                   </div>

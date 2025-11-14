@@ -71,36 +71,167 @@ const weOffer = [
   }
 ];
 
-const products = [
+// Product category hover items
+const networkCamerasHoverItems = [
   {
-    name: 'Network Cameras',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
-    description: 'High-quality IP cameras for professional surveillance'
+    id: 'nc01',
+    label: 'IP Dome Cameras',
+    icon: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&auto=format'
   },
   {
-    name: '4G/5G Cameras',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
-    description: 'Wireless cameras with cellular connectivity'
+    id: 'nc02',
+    label: 'IP Bullet Cameras',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
   },
   {
-    name: 'HD Recorders',
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop',
-    description: 'Digital video recorders for reliable storage'
+    id: 'nc03',
+    label: 'PTZ Cameras',
+    icon: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop&auto=format'
   },
   {
-    name: 'Access Control',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop',
-    description: 'Advanced access control systems'
+    id: 'nc04',
+    label: 'Fisheye Cameras',
+    icon: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=200&fit=crop&auto=format'
   },
   {
-    name: 'Alarm Systems',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop',
-    description: 'Intelligent alarm and monitoring systems'
+    id: 'nc05',
+    label: 'Thermal Cameras',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
   },
   {
-    name: 'Storage Solutions',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop',
-    description: 'Cloud and local storage options'
+    id: 'nc06',
+    label: 'Night Vision Cameras',
+    icon: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&auto=format'
+  }
+];
+
+const cellularCamerasHoverItems = [
+  {
+    id: 'cc01',
+    label: '4G LTE Cameras',
+    icon: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'cc02',
+    label: '5G Cameras',
+    icon: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'cc03',
+    label: 'Wireless IP Cameras',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'cc04',
+    label: 'Solar Powered Cameras',
+    icon: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=200&h=200&fit=crop&auto=format'
+  }
+];
+
+const accessControlHoverItems = [
+  {
+    id: 'ac01',
+    label: 'Biometric Access Control',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ac02',
+    label: 'Card Access Systems',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ac03',
+    label: 'Keypad Systems',
+    icon: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ac04',
+    label: 'Turnstile Systems',
+    icon: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ac05',
+    label: 'Visitor Management',
+    icon: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&auto=format'
+  }
+];
+
+const alarmSystemsHoverItems = [
+  {
+    id: 'as01',
+    label: 'Intrusion Alarm Systems',
+    icon: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'as02',
+    label: 'Fire Alarm Systems',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'as03',
+    label: 'Motion Detectors',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'as04',
+    label: 'Glass Break Sensors',
+    icon: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'as05',
+    label: 'Wireless Alarm Systems',
+    icon: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&auto=format'
+  }
+];
+
+const storageSolutionsHoverItems = [
+  {
+    id: 'ss01',
+    label: 'NVR Systems',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss02',
+    label: 'DVR Systems',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss03',
+    label: 'Cloud Storage',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss04',
+    label: 'NAS Systems',
+    icon: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss05',
+    label: 'HDD Storage',
+    icon: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&auto=format'
+  }
+];
+
+const productsCatalog = [
+  {
+    category: 'Network Cameras',
+    hoverItems: networkCamerasHoverItems
+  },
+  {
+    category: '4G/5G Cameras',
+    hoverItems: cellularCamerasHoverItems
+  },
+  {
+    category: 'Access Control',
+    hoverItems: accessControlHoverItems
+  },
+  {
+    category: 'Alarm Systems',
+    hoverItems: alarmSystemsHoverItems
+  },
+  {
+    category: 'Storage Solutions',
+    hoverItems: storageSolutionsHoverItems
   }
 ];
 
@@ -251,6 +382,10 @@ const contactChannels = [
 ];
 
 export default function HomePage() {
+  const [selectedProductCategoryIndex, setSelectedProductCategoryIndex] = useState(0);
+  const [clickedProductCategory, setClickedProductCategory] = useState('network-cameras');
+  const productsDropdownRef = useRef(null);
+  
   const [weOfferIndex, setWeOfferIndex] = useState(0);
   const [isWeOfferDragging, setIsWeOfferDragging] = useState(false);
   const [weOfferStartX, setWeOfferStartX] = useState(0);
@@ -359,10 +494,10 @@ export default function HomePage() {
       
       <main>
         <section className="homepage-hero" id="home">
-          <div className="homepage-hero__overlay" />
+          {/* <div className="homepage-hero__overlay" /> */}
           <div className="homepage-hero__content">
             <span className="badge">Professional Security Solutions</span>
-            <h1>Design, Build, and Scale Security Systems with Confidence</h1>
+            <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
             <p>
               Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
               your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
@@ -509,24 +644,62 @@ export default function HomePage() {
         </div>
       </section>
 
-        <section className="products-section" id="products">
+        <section className="products-section cloud-devops" id="products">
           <div className="section-header">
             <h2>Our Products</h2>
             <p>Comprehensive range of security products for every need</p>
-          </div>
-          <div className="products-grid">
-            {products.map((product, index) => (
-              <article className="product-card" key={index}>
-                <div className="product-card__image">
-                  <img src={product.image} alt={product.name} />
                 </div>
-                <div className="product-card__content">
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
-                  <a href="#" className="product-card__link">Learn More →</a>
+          <div className="cloud-devops__container">
+            <aside className="cloud-devops__sidebar">
+              <ul className="cloud-devops__category-list">
+                {productsCatalog.map((category, index) => {
+                  const categoryKeys = ['network-cameras', 'cellular-cameras', 'access-control', 'alarm-systems', 'storage-solutions'];
+                  const categoryKey = categoryKeys[index];
+                  return (
+                    <li 
+                      key={category.category}
+                      className="cloud-devops__category-item"
+                      ref={index === 0 ? productsDropdownRef : null}
+                    >
+                      <button
+                        className={`cloud-devops__category-btn ${clickedProductCategory === categoryKey ? 'active' : ''}`}
+                        onClick={() => {
+                          const newCategory = clickedProductCategory === categoryKey ? null : categoryKey;
+                          setClickedProductCategory(newCategory || 'network-cameras');
+                          setSelectedProductCategoryIndex(newCategory ? index : 0);
+                        }}
+                      >
+                        {category.category}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </aside>
+            <div className="cloud-devops__content">
+              {clickedProductCategory && productsCatalog[selectedProductCategoryIndex] && (
+                <div className="cloud-devops__hover-dropdown cloud-devops__hover-dropdown--support">
+                  <div className="cloud-devops__hover-grid">
+                    {productsCatalog[selectedProductCategoryIndex].hoverItems.map((item) => (
+                      <div key={item.id} className="cloud-devops__hover-item">
+                        <div className="cloud-devops__hover-icon">
+                          <img src={item.icon} alt={item.label} onError={(e) => {
+                            e.target.style.display = 'none';
+                            if (e.target.nextSibling) {
+                              e.target.nextSibling.style.display = 'flex';
+                            }
+                          }} />
+                          <div className="cloud-devops__hover-icon-placeholder" style={{ display: 'none' }}>
+                            {item.label.split(' ').map(word => word.charAt(0)).join('').substring(0, 2)}
                 </div>
-              </article>
+                        </div>
+                        <span className="cloud-devops__hover-label">{item.label}</span>
+              </div>
             ))}
+                  </div>
+                </div>
+              )}
+          </div>
         </div>
       </section>
 

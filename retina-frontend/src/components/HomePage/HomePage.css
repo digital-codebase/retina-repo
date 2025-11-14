@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1700&q=80&fm=webp');
+  background-image: url('../../../public/assets/img/f22fcfbb-eddc-4c59-9fef-83154f0bcef0.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -860,7 +860,6 @@ main section {
   justify-content: center;
   text-align: center;
   padding: 140px 20px 120px;
-  background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1920&q=80&fm=webp');
   background-size: cover;
   background-position: center;
 }
@@ -1366,7 +1365,7 @@ main section {
 }
 
 .testimonials__illustration {
-  background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1700&q=80&fm=webp');
+  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1700&q=80&fm=webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2471,7 +2470,7 @@ main section {
   padding: 40px 20px;
   margin-bottom: 0;
   border-top: 1px solid #e0e0e0;
-  margin: -30px 0;
+  margin: -80px 0 -30px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 60px;

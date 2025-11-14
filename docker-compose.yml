@@ -10,15 +10,15 @@ services:
 
   # Backend service (Go API)
   backend:
-    build: ./backend
+    build: ./retina-backend
     container_name: backend
     develop:
       watch:
-        - path: ./backend/main.go
+        - path: ./retina-backend/main.go
           action: rebuild
-        - path: ./backend/go.mod
+        - path: ./retina-backend/go.mod
           action: rebuild
-        - path: ./backend/go.sum
+        - path: ./retina-backend/go.sum
           action: rebuild
     labels:
       traefik.http.routers.backend.rule: Host(`localhost`) && PathPrefix(`/api`)
@@ -27,19 +27,19 @@ services:
   # Frontend service (React app)
   frontend:
     build: 
-      context: ./frontend
+      context: ./retina-frontend
     container_name: frontend
     develop:
       watch:
-        - path: ./frontend/src
+        - path: ./retina-frontend/src
           action: rebuild
-        - path: ./frontend/public
+        - path: ./retina-frontend/public
           action: rebuild
-        - path: ./frontend/package.json
+        - path: ./retina-frontend/package.json
           action: rebuild
-        - path: ./frontend/package-lock.json
+        - path: ./retina-frontend/package-lock.json
           action: rebuild
-        - path: ./frontend/server.js
+        - path: ./retina-frontend/server.js
           action: rebuild
     labels:
       traefik.http.routers.client.rule: Host(`localhost`)

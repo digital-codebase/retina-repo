@@ -1,0 +1,27 @@
+version: '2.4'
+
+services:
+  proxy:
+    image: traefik:v3.4
+    command: --providers.docker
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  retina-backend:
+    build: ./retina-backend
+    container_name: retina-backend
+    labels:
+      traefik.http.routers.retina-backend.rule: Host(`localhost`) && PathPrefix(`/api`)
+      traefik.http.services.retina-backend.loadbalancer.server.port: 8080
+
+  retina-frontend:
+    build:
+      context: ./retina-frontend
+    container_name: retina-frontend
+    labels:
+      traefik.http.routers.client.rule: Host(`localhost`)
+      traefik.http.services.client.loadbalancer.server.port: 3000
+    depends_on:
+      - retina-backend

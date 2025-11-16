@@ -267,11 +267,21 @@
 
 .main-nav__search-wrapper {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 0px);
   right: 0;
   width: 280px;
   z-index: 1000;
   animation: slideDown 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.main-nav__search-separator {
+  width: 100%;
+  height: 2px;
+  background-color: #dc2626;
+  margin-bottom: 12px;
 }
 
 @keyframes slideDown {
@@ -292,41 +302,31 @@
   gap: 0;
   background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 50px;
+  padding: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.main-nav__search:hover {
-  border-color: #0c63e7;
-  box-shadow: 0 2px 12px rgba(12, 99, 231, 0.15);
-}
-
-.main-nav__search:focus-within {
-  border-color: #0c63e7;
-  box-shadow: 0 0 0 3px rgba(12, 99, 231, 0.1), 0 2px 12px rgba(12, 99, 231, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav__search input {
   flex: 1;
-  padding: 12px 20px;
+  padding: 10px 18px;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 14px;
   font-family: inherit;
   color: #333333;
-  background: transparent;
+  background: #f5f5f5;
 }
 
 .main-nav__search input::placeholder {
-  color: #999999;
+  color: #666666;
 }
 
 .main-nav__search button {
-  padding: 12px 20px;
+  padding: 10px 16px;
   border: none;
-  background: #0c63e7;
+  background: #4a5568;
   color: #ffffff;
   cursor: pointer;
   display: flex;
@@ -337,34 +337,10 @@
 }
 
 .main-nav__search button:hover {
-  background: #0954c9;
+  background: #2d3748;
 }
 
 .main-nav__search button svg {
-  width: 18px;
-  height: 18px;
-}
-
-.main-nav__search-close {
-  padding: 12px 16px;
-  border: none;
-  background: transparent;
-  color: #666666;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-  border-left: 1px solid #e0e0e0;
-}
-
-.main-nav__search-close:hover {
-  color: #333333;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.main-nav__search-close svg {
   width: 18px;
   height: 18px;
 }
@@ -443,10 +419,6 @@
 
   .main-nav__search button {
     padding: 10px 16px;
-  }
-
-  .main-nav__search-close {
-    padding: 10px 12px;
   }
 
   .main-nav__actions {

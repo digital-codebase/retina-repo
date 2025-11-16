@@ -6,6 +6,7 @@ export default function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
   const accountDropdownRef = useRef(null);
+  const searchInputRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -43,6 +44,19 @@ export default function MainNavigation() {
     setIsMenuOpen(false);
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchInputRef.current) {
+      const searchTerm = searchInputRef.current.value.trim();
+      if (searchTerm) {
+        // Add your search functionality here
+        console.log('Searching for:', searchTerm);
+        // Example: You could navigate to a search results page or filter content
+        // window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+      }
+    }
+  };
+
   return (
     <header className="main-nav">
       <div className="main-nav__inner">
@@ -68,6 +82,23 @@ export default function MainNavigation() {
           <a href="#contact-us" onClick={(e) => { e.preventDefault(); scrollToSection('contact-us'); handleLinkClick(); }}>
             Contact Us
           </a>
+          <div className="main-nav__search">
+            <input 
+              ref={searchInputRef}
+              type="search" 
+              placeholder="Search..." 
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSearch(e);
+                }
+              }}
+            />
+            <button type="button" aria-label="Search" onClick={handleSearch}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </nav>
 
         <div className="main-nav__actions">

@@ -5,24 +5,36 @@ import './MainNavigation.css';
 export default function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const accountDropdownRef = useRef(null);
   const searchInputRef = useRef(null);
+  const searchWrapperRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
         setIsAccountDropdownOpen(false);
       }
+      if (searchWrapperRef.current && !searchWrapperRef.current.contains(event.target) && 
+          !event.target.closest('.main-nav__search-toggle')) {
+        setIsSearchOpen(false);
+      }
     };
 
-    if (isAccountDropdownOpen) {
+    if (isAccountDropdownOpen || isSearchOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isAccountDropdownOpen]);
+  }, [isAccountDropdownOpen, isSearchOpen]);
+
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchOpen]);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -42,6 +54,10 @@ export default function MainNavigation() {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setIsMenuOpen(false);
+  };
+
+  const handleSearchToggle = () => {
+    setIsSearchOpen((prev) => !prev);
   };
 
   const handleSearch = (e) => {
@@ -82,22 +98,51 @@ export default function MainNavigation() {
           <a href="#contact-us" onClick={(e) => { e.preventDefault(); scrollToSection('contact-us'); handleLinkClick(); }}>
             Contact Us
           </a>
-          <div className="main-nav__search">
-            <input 
-              ref={searchInputRef}
-              type="search" 
-              placeholder="Search..." 
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  handleSearch(e);
-                }
-              }}
-            />
-            <button type="button" aria-label="Search" onClick={handleSearch}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="main-nav__search-container">
+            <button 
+              className="main-nav__search-toggle"
+              type="button"
+              aria-label="Toggle search"
+              onClick={handleSearchToggle}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
+            {isSearchOpen && (
+              <div className="main-nav__search-wrapper" ref={searchWrapperRef}>
+                <div className="main-nav__search">
+                  <input 
+                    ref={searchInputRef}
+                    type="search" 
+                    placeholder="Search products..." 
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleSearch(e);
+                      }
+                      if (e.key === 'Escape') {
+                        setIsSearchOpen(false);
+                      }
+                    }}
+                  />
+                  <button type="button" aria-label="Search" onClick={handleSearch}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  <button 
+                    type="button" 
+                    className="main-nav__search-close"
+                    aria-label="Close search"
+                    onClick={() => setIsSearchOpen(false)}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
 

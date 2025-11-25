@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,12 +10,13 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Retina</h3>
             <p>Your trusted partner for CCTV, vending machines, and security solutions. We provide comprehensive security services to protect what matters most.</p>
-            <div className="social-links">
-              <a href="#" aria-label="Facebook">📘</a>
-              <a href="#" aria-label="Twitter">🐦</a>
-              <a href="#" aria-label="LinkedIn">💼</a>
-              <a href="#" aria-label="Instagram">📷</a>
-            </div>
+            
+	     <div className="social-links flex gap-4">
+               <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+               <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+               <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+               <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+             </div>
           </div>
 
           <div className="footer-section">
@@ -31,11 +33,15 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li><a href="#cctv">CCTV Systems</a></li>
-              <li><a href="#vending">Vending Machines</a></li>
-              <li><a href="#security">Security Services</a></li>
-              <li><a href="#support">Support</a></li>
-              <li><a href="#training">Training</a></li>
+              <li><a href="#install">CCTV Installation Service</a></li>
+              <li><a href="#maintain">CCTV Maintenace Service</a></li>
+              <li><a href="#consult">CCTV Consultation Service</a></li>
+              <li><a href="#rm">Remote Monitoring Service</a></li>
+              <li><a href="#dl">DigitalLock Service</a></li>
+
+
+              
+
             </ul>
           </div>
 
@@ -45,7 +51,7 @@ export default function Footer() {
               <li>📍 123 Security Street, City, Country</li>
               <li>📞 +1 (555) 123-4567</li>
               <li>✉️ info@retina.com</li>
-              <li>🕒 Mon-Fri: 9:00 AM - 6:00 PM</li>
+              
             </ul>
           </div>
         </div>

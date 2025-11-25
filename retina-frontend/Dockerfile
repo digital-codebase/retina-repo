@@ -8,7 +8,20 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN apk add --no-cache \
+    build-base \
+    vips-dev \
+    libmagic \
+    bash \
+    libc6-compat
+
+
+
+RUN npm install --include=optional sharp \
+    npm install passport-google-oauth20 \
+    npm install --save-dev @types/passport-google-oauth20 lucide-react
+
+
 
 # Copy all source code
 COPY . .

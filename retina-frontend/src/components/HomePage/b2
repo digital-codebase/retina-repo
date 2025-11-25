@@ -8,191 +8,177 @@ import './HomePage.css';
 const trendingProducts = [
   {
     id: 1,
-    name: 'Dome CCTV Camera',
-    code: '3MP 3K Pro HD Wi-Fi Smart Home Security Dome Camera',
-    image: '/assets/img/trending/dome.avif',
+    name: 'HD-NVR-4328H8-4K',
+    code: '32 CHANNEL 8 SATA NETWORK VIDEO RECORDER',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop',
   },
   {
     id: 2,
-    name: 'IP CCTV Camera',
-    code: '5MP IP CCTV 4 Camera',
-    image: '/assets/img/trending/ip.avif',
+    name: 'HC-IPC-SDQ41620L',
+    code: '4K Network Camera',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop',
   },
-  
- 
   {
     id: 3,
-    name: 'WIFI CCTV Camera',
-    code: 'Wi-Fi Security Camera 1080p',
-    image: '/assets/img/trending/wifi.avif',
+    name: 'HF-SGGFS04-65W',
+    code: 'PTZ Security Camera',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=400&fit=crop',
   },
-
   {
     id: 4,
-    name: 'Solar CCTV Camera',
-    code: '3+3Mp Wireless 4G Cellular Solar Powered Security Camera',
-    image: '/assets/img/trending/solar.avif',
+    name: 'HD-XVR-5108QL',
+    code: 'Hybrid Video Recorder',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop',
   },
-
   {
     id: 5,
-    name: 'Bike Camera',
-    code: 'Smart Bike Cam Pro | 2K Resolution 3MP 1296p',
-    image: '/assets/img/trending/bike2.avif',
+    name: 'HF-EST108',
+    code: '8 PORT ETHERNET SWITCH',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=400&fit=crop',
   },
-
- {
-    id: 6,
-    name: 'Car Dash Camera',
-    code: 'Car Dash Camera Pro 2K Resolution QHD Dash Cam',
-    image: '/assets/img/trending/car2.avif',
-  },
-
-
 ];
-
-
-
 
 const weOffer = [
   {
-    title: 'CCTV Installation Service',
+    title: 'CCTV Installation',
     description: 'Professional CCTV installation services for homes and businesses. Our expert technicians ensure proper setup, configuration, and integration with your existing security infrastructure.',
-    image: '/assets/img/offer/install.avif',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=500&fit=crop',
   },
   {
-    title: 'CCTV Videos Maintenance & Backup Service',
+    title: 'CCTV Videos Maintenance & Backup ',
     description: 'Complete vending machine setup and maintenance services. We provide end-to-end solutions including installation, payment integration, and ongoing support for seamless operations.',
-    image: '/assets/img/offer/backup.avif',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop',
   },
   {
-    title: 'CCTV Consultation Service',
+    title: 'Network Security',
     description: 'Comprehensive security solutions tailored to your needs. From access control to alarm systems, we design and implement complete security infrastructure for your property.',
-    image: '/assets/img/offer/consult.avif',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop',
   },
   {
-    title: 'Remote Monitoring Service',
+    title: 'Maintenance & Support',
     description: '24/7 maintenance and technical support for all systems. Our dedicated support team ensures your security systems operate at peak performance with proactive monitoring and rapid response.',
-    image: '/assets/img/offer/remote.avif',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop',
   },
   {
-    title: 'Digital Lock Services',
+    title: 'Consultation Services',
     description: 'Expert consultation to design the perfect security setup. Our security consultants analyze your requirements and provide customized solutions that fit your budget and security needs.',
-    image: '/assets/img/offer/door.avif',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=500&fit=crop',
   },
+  {
+    title: 'Remote Monitoring',
+    description: 'Advanced remote monitoring and surveillance solutions. Access your security systems from anywhere with our cloud-based monitoring platform and mobile applications.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop',
+  }
 ];
-
-
-
 
 // Product category hover items
 const networkCamerasHoverItems = [
   {
     id: 'nc01',
     label: '2 MegaPixel Network Camera',
-    icon: '/assets/img/nc/c01.avif',
+    icon: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'nc02',
     label: '4 MegaPixel Network Camera',
-    icon: '/assets/img/nc/c01.avif',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'nc03',
-    label: '6 MegaPixel Network Camera',
-    icon: '/assets/img/nc/c01.avif',
+    label: '5 MegaPixel Network Camera',
+    icon: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'nc04',
-    label: '8 MegaPixel Network Camera',
-    icon: '/assets/img/nc/c01.avif',
+    label: '6 MegaPixel Network Camera',
+    icon: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=200&h=200&fit=crop&auto=format'
   },
+  {
+    id: 'nc05',
+    label: '8 MegaPixel Network Camera',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
+  }
 ];
 
 const cellularCamerasHoverItems = [
   {
     id: 'cc01',
     label: '2 MegaPixel Analog Camera',
-    icon: '/assets/img/analog/c01.avif',
+    icon: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'cc02',
     label: '4 MegaPixel Analog Camera',
-    icon: '/assets/img/analog/c01.avif',
+    icon: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'cc03',
-    label: '6 MegaPixel Analog Camera',
-    icon: '/assets/img/analog/c01.avif',
+    label: '5 MegaPixel Analog Camera',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
   },
 
   {
     id: 'cc04',
     label: '8 MegaPixel Analog Camera',
-    icon: '/assets/img/analog/c01.avif',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
   },
 
 ];
-
-
-
-
 
 const accessControlHoverItems = [
   {
     id: 'ac01',
     label: 'Secureye S‑BW15 Body Worn Camera',
-    icon: '/assets/img/floating/bodyworn.avif',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
   },
 
 
- {
+
+  {
     id: 'ac02',
     label: 'Ggcam Professional Premium Action Helmet Camera 4K',
-    icon: '/assets/img/floating/helmet.avif',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
   },
 
 
- {
+  {
     id: 'ac03',
     label: 'Qubo Smart Bike Cam Pro',
-    icon: '/assets/img/floating/bike01.avif',
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
   },
-
-  { 
+    
+  {	
     id: 'ac04',
     label: 'Qubo Car Dash Cam Pro 2.7K',
-    icon: '/assets/img/floating/car01.avif',
-  },
+    icon: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=200&fit=crop&auto=format'
+  }
+	
 
 
 ];
-
-
-
 
 const alarmSystemsHoverItems = [
   {
     id: 'as01',
-    label: 'Smart Door Lock',
-    icon: '/assets/img/doors/door01.avif',
+    label: 'Atomberg Azhero Smart Door Lock',
+    icon: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&auto=format'
   },
   
   {
     id: 'as02',
-    label: 'Smart Door Lock with AI Face Recognition',
-    icon: '/assets/img/doors/door02.avif',
+    label: 'Okos Smart Door Lock with AI Face Recognition',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
   },
   {
     id: 'as03',
-    label: 'Smart Door Lock Essential',
-    icon: '/assets/img/doors/door03.avif',
+    label: 'QUBO Smart Door Lock Essential',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
   },
   {  
     id: 'as04',
-    label: 'Touchless Biometric Attendance Device Fingerprint/FaceRecognition',
-    icon: '/assets/img/doors/door04.avif',
-  },
+    label: 'Multi‑Access Smart Door Lock',
+    icon: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&h=200&fit=crop&auto=format'
+  }
 
 
 ];
@@ -201,6 +187,34 @@ const alarmSystemsHoverItems = [
 
 
 
+const storageSolutionsHoverItems = [
+  
+  {
+    id: 'ss01',
+    label: 'Honeywell Multi‑Sensor Smoke Detector',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss02',
+    label: 'NOTOFIRE Wireless Smoke Detector Battery Operated',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  },
+  {
+    id: 'ss03',
+    label: 'Agni Fire Alarm Detector',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  },
+   
+  {	
+    id: 'ss04',
+    label: 'Fire Alarm System',
+    icon: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&h=200&fit=crop&auto=format'
+  }
+
+
+
+
+];
 
 
 const productsCatalog = [
@@ -213,13 +227,17 @@ const productsCatalog = [
     hoverItems: cellularCamerasHoverItems
   },
   {
-    category: 'Floating Cameras',
+    category: 'Mobile Cameras',
     hoverItems: accessControlHoverItems
   },
   {
-    category: 'Digital DoorLocks',
+    category: 'Digital DoorLock',
     hoverItems: alarmSystemsHoverItems
   },
+  {
+    category: 'FireAlarm',
+    hoverItems: storageSolutionsHoverItems
+  }
 ];
 
 
@@ -228,32 +246,29 @@ const solutions = [
   {
     title: 'Surveillance for Classroom',
     description: 'Comprehensive surveillance systems for schools and colleges provide complete campus security. With features like motion detection, remote access, two-way communications and 24/7 monitoring, we help safeguard students, staff, and valuable assets, creating a safer learning environment.',
-    image: '/assets/img/solutions/classroom.avif',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=500&fit=crop',
   },
   {
-    title: 'Surveillance for Hospitals',
+    title: 'Surveillance for Corporate',
     description: 'Safeguard your workplace with our corporate surveillance solutions. Our enterprise-grade CCTV cameras ensure seamless monitoring of high-traffic areas, employee safety, and intellectual property protection, helping your business run smoothly and securely',
-    image: '/assets/img/solutions/hospitals.avif',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop',
   },
   {
     title: 'Surveillance for Parking Area',
     description: 'Ensure parking lot security with our surveillance systems. Our smart solutions offer real-time footage to prevent unauthorized access, track vehicle movements, reduce theft, and enhance safety. Streamline operations and protect your facilities with advanced, reliable technology.',
-    image: '/assets/img/solutions/parking.avif',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=500&fit=crop',
   },
   {
     title: 'Surveillance for Home Security',
     description: 'Our home security systems offer robust protection with wireless cameras, motion detectors, and smart home integration. Stay connected and secure from anywhere, ensuring peace of mind for your family. Our solutions combine advanced technology, affordability, and user-friendly interfaces.',
-    image: '/assets/img/solutions/home.avif',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=500&fit=crop',
   },
   {
-    title: 'Surveillance for Offices',
+    title: 'Surveillance for Retail',
     description: 'Protect your retail business with our comprehensive surveillance solutions. Monitor store activities, prevent theft, and ensure customer safety with our advanced CCTV systems. Real-time monitoring and analytics help optimize operations and enhance security.',
-    image: '/assets/img/solutions/office.avif',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
   },
 ];
-
-
-
 
 const customers = [
   {
@@ -316,43 +331,43 @@ const faqs = [
   },
 ];
 
-
-
-
 const pressHighlights = [
-  
   {
-    title: 'Safeguarding Your Surveillance: 10 Essential Tips to Prevent CCTV Camera Hacking',
-    descriptions: 'Ensuring Peace of Mind with Cutting-Edge CCTV Security Solutions',	  
-    image: '/assets/img/cs/hacking.avif',
+    title: 'Retina Unveils the Largest Range of Government-Approved & Cyber-Secured Smart Home Wi-Fi Cameras',
+    date: '09/02/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
   },
   {
-    title: 'How AI-Powered Video Analytics Reduced Security Incidents by 65% in Commercial Buildings',
-    descriptions: 'Smart monitoring, real-time threat detection, and automated security alerts',	  
-    image: '/assets/img/cs/modern.avif',
+    title: 'Retina Sets the Stage for Security Future: From Commercial to Residential Resilience',
+    date: '09/02/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
   },
   {
-    title: 'Transforming Residential Security: Smart CCTV Integration With Cloud and Mobile Access',
-    description: 'Empowering homeowners with remote monitoring and smart automation',	  
-    image: '/assets/img/cs/cloud.avif',
+    title: 'Retina Honored for Excellence in Strategic Security Manufacturing at Industry Awards 2025',
+    date: '09/02/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop',
   },
   {
-    title: 'Boosting Industrial Safety: Preventing Theft & Unauthorized Access With ANPR and PTZ Surveillance',
-    description: 'Advanced vehicle tracking & wide-area monitoring for factories and warehouses',	  
-    image: '/assets/img/cs/theft.avif',
+    title: 'Retina Takes Strong Legal Action Against Counterfeit Security Equipment Operations',
+    date: '09/11/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop',
   },
   {
-    title: 'Upgrading Legacy CCTV Systems to Ultra-HD IP Surveillance: A Real Customer Journey From Analog to Digital',
-    description: 'Improving clarity, scalability, and reliability with modern IP cameras',	  
-    image: '/assets/img/cs/journey.avif',
+    title: 'Retina Unveils its latest Security Store in Major City, Inaugurated by Industry Leaders',
+    date: '09/02/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop',
   },
-
-
-
-
-
-
-  
+  {
+    title: 'Retina Sets the Stage for Security Future: From Commercial to Residential Resilience',
+    date: '09/02/2025',
+    time: '00:00:00',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+  },
 ];
 
 const contactChannels = [
@@ -489,14 +504,11 @@ export default function HomePage() {
           {/* <div className="homepage-hero__overlay" /> */}
           <div className="homepage-hero__content">
             <span className="badge">Professional Security Solutions</span>
-            
-	    <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
+            <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
             <p>
-                 Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
-                 your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
+              Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
+              your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
             </p>
-
-
             <div className="hero-cta">
               <a className="btn btn-primary" href="#products">
                 Explore Products
@@ -939,7 +951,7 @@ export default function HomePage() {
         <section className="press">
           <div className="press__header">
             <div className="press__header-left">
-              <h2>Explore Our Case Studies</h2>
+              <h2>Print & Press</h2>
               <p className="press__header-description">Latest Retina news to keep you updated about the security and surveillance industry.</p>
                 </div>
             <div className="press__header-right">

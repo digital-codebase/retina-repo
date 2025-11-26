@@ -731,11 +731,6 @@ export default function HomePage() {
           <div className="section-header">
             <h2>Our Products</h2>
             <p>Comprehensive range of security products for every need</p>
-            <div style={{ marginTop: '20px' }}>
-              <a href="/products" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>
-                View All Products
-              </a>
-            </div>
                 </div>
           <div className="cloud-devops__container">
             <aside className="cloud-devops__sidebar">
@@ -788,8 +783,49 @@ export default function HomePage() {
                 </div>
               )}
           </div>
+          <div />
+          <div style={{ marginTop: '40px', textAlign: 'center', width: '100%' }}>
+            <a href="/products" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>
+              View All Products
+            </a>
+          </div>
         </div>
       </section>
+
+        <section className="pricing-section" id="pricing">
+          <div className="section-header">
+            <h2>Pricing Plans</h2>
+            <p>Choose the perfect plan for your security needs</p>
+          </div>
+          <div className="pricing-grid">
+            {pricingPlans.map((plan, index) => (
+              <div key={index} className={`pricing-card ${plan.popular ? 'pricing-card--popular' : ''}`}>
+                {plan.popular && <div className="pricing-card__badge">Most Popular</div>}
+                <div className="pricing-card__header">
+                  <h3>{plan.name}</h3>
+                  <div className="pricing-card__price">
+                    <span className="pricing-card__amount">{plan.price}</span>
+                    <span className="pricing-card__period">/{plan.period}</span>
+                  </div>
+                  <p className="pricing-card__description">{plan.description}</p>
+                </div>
+                <ul className="pricing-card__features">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className={`pricing-card__button ${plan.popular ? 'pricing-card__button--primary' : ''}`}>
+                  Get Started
+              </button>
+          </div>
+            ))}
+          </div>
+        </section>
 
         <section className="solutions" id="solutions">
           <div className="section-header">
@@ -1113,6 +1149,7 @@ export default function HomePage() {
                             </div>
                           </div>
                         </div>
+                        <div>{press.description}</div>
                       </article>
                     ))}
                   </div>
@@ -1121,41 +1158,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-        <section className="pricing-section" id="pricing">
-          <div className="section-header">
-            <h2>Pricing Plans</h2>
-            <p>Choose the perfect plan for your security needs</p>
-          </div>
-          <div className="pricing-grid">
-            {pricingPlans.map((plan, index) => (
-              <div key={index} className={`pricing-card ${plan.popular ? 'pricing-card--popular' : ''}`}>
-                {plan.popular && <div className="pricing-card__badge">Most Popular</div>}
-                <div className="pricing-card__header">
-                  <h3>{plan.name}</h3>
-                  <div className="pricing-card__price">
-                    <span className="pricing-card__amount">{plan.price}</span>
-                    <span className="pricing-card__period">/{plan.period}</span>
-                  </div>
-                  <p className="pricing-card__description">{plan.description}</p>
-                </div>
-                <ul className="pricing-card__features">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <button className={`pricing-card__button ${plan.popular ? 'pricing-card__button--primary' : ''}`}>
-                  Get Started
-              </button>
-          </div>
-            ))}
-          </div>
-        </section>
 
         <section className="faq-section" id="faq">
           <div className="section-header">

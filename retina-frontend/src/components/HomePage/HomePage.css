@@ -2317,6 +2317,7 @@ main section {
 .press-card {
   flex: 1;
   min-width: 0;
+  width: 100px;
   background: #ffffff;
   border-radius: 8px;
   overflow: hidden;

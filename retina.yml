@@ -9,12 +9,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  retina-backend:
-    build: ./retina-backend
-    container_name: retina-backend
-    labels:
-      traefik.http.routers.retina-backend.rule: Host(`localhost`) && PathPrefix(`/api`)
-      traefik.http.services.retina-backend.loadbalancer.server.port: 8080
+  # retina-backend:
+  #   build: ./retina-backend
+  #   container_name: retina-backend
+  #   labels:
+  #     traefik.http.routers.retina-backend.rule: Host(`localhost`) && PathPrefix(`/api`)
+  #     traefik.http.services.retina-backend.loadbalancer.server.port: 8080
 
   retina-frontend:
     build:

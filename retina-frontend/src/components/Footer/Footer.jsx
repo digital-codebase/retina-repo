@@ -33,11 +33,11 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li><a href="#install">CCTV Installation Service</a></li>
-              <li><a href="#maintain">CCTV Maintenace Service</a></li>
-              <li><a href="#consult">CCTV Consultation Service</a></li>
-              <li><a href="#rm">Remote Monitoring Service</a></li>
-              <li><a href="#dl">DigitalLock Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Installation Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Maintenance Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Consultation Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>Remote Monitoring Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>Digital Lock Service</a></li>
 
 
               

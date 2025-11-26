@@ -9,20 +9,20 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   # Backend service (Go API)
-  backend:
-    build: ./retina-backend
-    container_name: backend
-    develop:
-      watch:
-        - path: ./retina-backend/main.go
-          action: rebuild
-        - path: ./retina-backend/go.mod
-          action: rebuild
-        - path: ./retina-backend/go.sum
-          action: rebuild
-    labels:
-      traefik.http.routers.backend.rule: Host(`localhost`) && PathPrefix(`/api`)
-      traefik.http.services.backend.loadbalancer.server.port: 8080
+  # backend:
+  #   build: ./retina-backend
+  #   container_name: backend
+  #   develop:
+  #     watch:
+  #       - path: ./retina-backend/main.go
+  #         action: rebuild
+  #       - path: ./retina-backend/go.mod
+  #         action: rebuild
+  #       - path: ./retina-backend/go.sum
+  #         action: rebuild
+  #   labels:
+  #     traefik.http.routers.backend.rule: Host(`localhost`) && PathPrefix(`/api`)
+  #     traefik.http.services.backend.loadbalancer.server.port: 8080
 
   # Frontend service (React app)
   frontend:
@@ -44,5 +44,5 @@ services:
     labels:
       traefik.http.routers.client.rule: Host(`localhost`)
       traefik.http.services.client.loadbalancer.server.port: 3000
-    depends_on:
-      - backend
+    # depends_on:
+    #   - backend

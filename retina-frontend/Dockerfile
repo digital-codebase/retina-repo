@@ -8,20 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN apk add --no-cache \
-    build-base \
-    vips-dev \
-    libmagic \
-    bash \
-    libc6-compat
-
-
-
-RUN npm install --include=optional sharp \
-    npm install passport-google-oauth20 \
-    npm install --save-dev @types/passport-google-oauth20 lucide-react
-
-
+RUN npm install --legacy-peer-deps
 
 # Copy all source code
 COPY . .
@@ -30,6 +17,7 @@ COPY . .
 # ARG allows setting build-time variables for REACT_APP_*
 ARG REACT_APP_API_URL=
 ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV CI=false
 RUN npm run build
 
 # Expose application port

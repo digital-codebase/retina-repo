@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Register from './components/Regester/Register';
 import Health from './components/Health';
 import Products from './components/Products';
+import ProductsPage from './components/ProductsPage/ProductsPage';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/fleet-app/v1/health-check" element={<Health />} />
           <Route path="/fleet-app/v1/products" element={<Products />} />
         </Routes>

@@ -47,12 +47,7 @@ const trendingProducts = [
     code: 'Car Dash Camera Pro 2K Resolution QHD Dash Cam',
     image: '/assets/img/trending/car2.avif',
   },
-
-
 ];
-
-
-
 
 const weOffer = [
   {
@@ -146,20 +141,20 @@ const accessControlHoverItems = [
   },
 
 
- {
+  {
     id: 'ac02',
     label: 'Ggcam Professional Premium Action Helmet Camera 4K',
     icon: '/assets/img/floating/helmet.avif',
   },
 
 
- {
+  {
     id: 'ac03',
     label: 'Qubo Smart Bike Cam Pro',
     icon: '/assets/img/floating/bike01.avif',
   },
 
-  { 
+  {
     id: 'ac04',
     label: 'Qubo Car Dash Cam Pro 2.7K',
     icon: '/assets/img/floating/car01.avif',
@@ -188,7 +183,7 @@ const alarmSystemsHoverItems = [
     label: 'Smart Door Lock Essential',
     icon: '/assets/img/doors/door03.avif',
   },
-  {  
+  {
     id: 'as04',
     label: 'Touchless Biometric Attendance Device Fingerprint/FaceRecognition',
     icon: '/assets/img/doors/door04.avif',
@@ -314,36 +309,128 @@ const faqs = [
     answer:
       'Absolutely. We integrate with popular security platforms and systems. When upgrading, we respect current investments while introducing modern solutions that enhance your security posture.',
   },
+  {
+    question: 'What types of CCTV cameras do you offer?',
+    answer:
+      'We offer a comprehensive range of CCTV cameras including dome cameras, bullet cameras, wireless Wi-Fi cameras, solar cameras, PTZ cameras, video doorbells, and hidden cameras. All cameras come with various resolution options from 1MP to 8MP.',
+  },
+  {
+    question: 'Do you provide installation services?',
+    answer:
+      'Yes, we provide professional CCTV installation services for both residential and commercial properties. Our certified technicians ensure proper setup, configuration, and integration with your existing security infrastructure.',
+  },
+  {
+    question: 'What is the warranty period for your products?',
+    answer:
+      'Our products come with warranty options ranging from 1 year to 3 years depending on the product. All warranty details are clearly mentioned with each product listing.',
+  },
+  {
+    question: 'Do your cameras support night vision?',
+    answer:
+      'Yes, most of our cameras support night vision capabilities including IR Night Vision, Full-Color Night Vision, and Starlight Vision technologies. You can filter products by these features on our products page.',
+  },
+  {
+    question: 'Can I access my cameras remotely?',
+    answer:
+      'Yes, our IP cameras and Wi-Fi cameras support remote access through mobile apps and web interfaces. Many models also support cloud storage for easy access to recorded footage from anywhere.',
+  },
+  {
+    question: 'What payment methods do you accept?',
+    answer:
+      'We accept various payment methods including credit cards, debit cards, net banking, UPI, and cash on delivery for select locations. All transactions are secure and encrypted.',
+  },
+  {
+    question: 'Do you offer maintenance services?',
+    answer:
+      'Yes, we provide comprehensive maintenance and backup services including regular system checks, updates, automated monitoring, and 24/7 technical support to ensure your security systems operate at peak performance.',
+  },
+];
+
+const pricingPlans = [
+  {
+    name: 'Basic',
+    price: '₹2,999',
+    period: 'per month',
+    description: 'Perfect for small homes and offices',
+    features: [
+      'Up to 4 cameras',
+      '7 days cloud storage',
+      'Mobile app access',
+      'Email alerts',
+      'Basic support',
+    ],
+    popular: false,
+  },
+  {
+    name: 'Professional',
+    price: '₹5,999',
+    period: 'per month',
+    description: 'Ideal for medium-sized businesses',
+    features: [
+      'Up to 16 cameras',
+      '30 days cloud storage',
+      'Mobile & web access',
+      'Email & SMS alerts',
+      'AI motion detection',
+      'Priority support',
+    ],
+    popular: true,
+  },
+  {
+    name: 'Enterprise',
+    price: '₹12,999',
+    period: 'per month',
+    description: 'For large enterprises and institutions',
+    features: [
+      'Unlimited cameras',
+      '90 days cloud storage',
+      'Multi-user access',
+      'Advanced analytics',
+      'Custom integrations',
+      '24/7 dedicated support',
+      'On-site maintenance',
+    ],
+    popular: false,
+  },
 ];
 
 
 
 
 const pressHighlights = [
-  
   {
     title: 'Safeguarding Your Surveillance: 10 Essential Tips to Prevent CCTV Camera Hacking',
-    descriptions: 'Ensuring Peace of Mind with Cutting-Edge CCTV Security Solutions',	  
+    description: 'Ensuring Peace of Mind with Cutting-Edge CCTV Security Solutions',
+    date: '09/02/2025',
+    time: '00:00:00',
     image: '/assets/img/cs/hacking.avif',
   },
   {
     title: 'How AI-Powered Video Analytics Reduced Security Incidents by 65% in Commercial Buildings',
-    descriptions: 'Smart monitoring, real-time threat detection, and automated security alerts',	  
+    description: 'Smart monitoring, real-time threat detection, and automated security alerts',
+    date: '09/02/2025',
+    time: '00:00:00',
     image: '/assets/img/cs/modern.avif',
   },
   {
     title: 'Transforming Residential Security: Smart CCTV Integration With Cloud and Mobile Access',
-    description: 'Empowering homeowners with remote monitoring and smart automation',	  
+    description: 'Empowering homeowners with remote monitoring and smart automation',
+    date: '09/02/2025',
+    time: '00:00:00',
     image: '/assets/img/cs/cloud.avif',
   },
   {
     title: 'Boosting Industrial Safety: Preventing Theft & Unauthorized Access With ANPR and PTZ Surveillance',
-    description: 'Advanced vehicle tracking & wide-area monitoring for factories and warehouses',	  
+    description: 'Advanced vehicle tracking & wide-area monitoring for factories and warehouses',
+    date: '09/02/2025',
+    time: '00:00:00',
     image: '/assets/img/cs/theft.avif',
   },
   {
     title: 'Upgrading Legacy CCTV Systems to Ultra-HD IP Surveillance: A Real Customer Journey From Analog to Digital',
-    description: 'Improving clarity, scalability, and reliability with modern IP cameras',	  
+    description: 'Improving clarity, scalability, and reliability with modern IP cameras',
+    date: '09/02/2025',
+    time: '00:00:00',
     image: '/assets/img/cs/journey.avif',
   },
 
@@ -399,6 +486,7 @@ export default function HomePage() {
   const [pressIndex, setPressIndex] = useState(0);
   const [trendingIndex, setTrendingIndex] = useState(0);
   const trendingIntervalRef = useRef(null);
+  const [expandedFAQ, setExpandedFAQ] = useState({});
   
   // Auto-scroll trending products
   useEffect(() => {
@@ -490,10 +578,10 @@ export default function HomePage() {
           <div className="homepage-hero__content">
             <span className="badge">Professional Security Solutions</span>
             
-	    <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
+            <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
             <p>
-                 Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
-                 your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
+              Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
+              your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
             </p>
 
 
@@ -643,12 +731,17 @@ export default function HomePage() {
           <div className="section-header">
             <h2>Our Products</h2>
             <p>Comprehensive range of security products for every need</p>
+            <div style={{ marginTop: '20px' }}>
+              <a href="/products" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                View All Products
+              </a>
+            </div>
                 </div>
           <div className="cloud-devops__container">
             <aside className="cloud-devops__sidebar">
               <ul className="cloud-devops__category-list">
                 {productsCatalog.map((category, index) => {
-                  const categoryKeys = ['network-cameras', 'cellular-cameras', 'access-control', 'alarm-systems', 'storage-solutions'];
+                  const categoryKeys = ['network-cameras', 'cellular-cameras', 'access-control', 'alarm-systems'];
                   const categoryKey = categoryKeys[index];
                   return (
                     <li 
@@ -1029,61 +1122,78 @@ export default function HomePage() {
         </div>
       </section>
 
-        <section className="stay-updated" id="stay-updated">
-          <div className="stay-updated__col stay-updated__col--1">
-            <h2>Stay Updated!</h2>
-            <p>Sign up for our newsletter, and get the latest from Retina inboxed</p>
+        <section className="pricing-section" id="pricing">
+          <div className="section-header">
+            <h2>Pricing Plans</h2>
+            <p>Choose the perfect plan for your security needs</p>
           </div>
-          <div className="stay-updated__col stay-updated__col--2">
-            <form className="stay-updated__form">
-              <input type="email" placeholder="Enter Email Address" required />
-              <button type="submit">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <div className="pricing-grid">
+            {pricingPlans.map((plan, index) => (
+              <div key={index} className={`pricing-card ${plan.popular ? 'pricing-card--popular' : ''}`}>
+                {plan.popular && <div className="pricing-card__badge">Most Popular</div>}
+                <div className="pricing-card__header">
+                  <h3>{plan.name}</h3>
+                  <div className="pricing-card__price">
+                    <span className="pricing-card__amount">{plan.price}</span>
+                    <span className="pricing-card__period">/{plan.period}</span>
+                  </div>
+                  <p className="pricing-card__description">{plan.description}</p>
+                </div>
+                <ul className="pricing-card__features">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className={`pricing-card__button ${plan.popular ? 'pricing-card__button--primary' : ''}`}>
+                  Get Started
               </button>
-            </form>
           </div>
-          <div className="stay-updated__col stay-updated__col--3">
-            <h2>Follow Us</h2>
-            <p>We want to hear from you!</p>
+            ))}
           </div>
-          <div className="stay-updated__col stay-updated__col--4">
-            <div className="stay-updated__social">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" fill="currentColor"/>
-                </svg>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28446C14.0247 3.61173 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61232 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" fill="currentColor"/>
-                </svg>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"/>
-                  <path d="M8 7C8.82843 7 9.5 7.67157 9.5 8.5C9.5 9.32843 8.82843 10 8 10C7.17157 10 6.5 9.32843 6.5 8.5C6.5 7.67157 7.17157 7 8 7Z" fill="white"/>
-                  <path d="M6.5 17V11H9.5V17H6.5Z" fill="white"/>
-                  <path d="M11 17V13.5C11 12.6716 11.6716 12 12.5 12C13.3284 12 14 12.6716 14 13.5V17H17V13C17 11.3431 15.6569 10 14 10C13.0444 10 12.1931 10.4468 11.6438 11.1429H11.5V11H9.5V17H11Z" fill="white"/>
-                </svg>
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C18.105 2.291 18.907 2.469 19.637 2.767C20.5 3.125 21.188 3.613 21.817 4.242C22.386 4.812 22.875 5.5 23.233 6.363C23.531 7.093 23.709 7.895 23.767 9.15C23.825 10.416 23.837 10.796 23.837 14C23.837 17.204 23.825 17.584 23.767 18.85C23.709 20.105 23.531 20.907 23.233 21.637C22.875 22.5 22.386 23.188 21.817 23.817C21.188 24.386 20.5 24.875 19.637 25.233C18.907 25.531 18.105 25.709 16.85 25.767C15.584 25.825 15.204 25.837 12 25.837C8.796 25.837 8.416 25.825 7.15 25.767C5.895 25.709 5.093 25.531 4.363 25.233C3.5 24.875 2.812 24.386 2.183 23.817C1.614 23.188 1.125 22.5 0.767 21.637C0.469 20.907 0.291 20.105 0.233 18.85C0.175 17.584 0.163 17.204 0.163 14C0.163 10.796 0.175 10.416 0.233 9.15C0.291 7.895 0.469 7.093 0.767 6.363C1.125 5.5 1.614 4.812 2.183 4.242C2.812 3.613 3.5 3.125 4.363 2.767C5.093 2.469 5.895 2.291 7.15 2.233C8.416 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C5.775 0.132 4.902 0.333 4.14 0.63C3.335 0.935 2.638 1.34 2.054 1.925C1.47 2.51 1.065 3.207 0.76 4.012C0.463 4.774 0.262 5.647 0.202 6.925C0.144 8.205 0.13 8.613 0.13 11.872C0.13 15.131 0.144 15.539 0.202 16.819C0.262 18.097 0.463 18.97 0.76 19.732C1.065 20.537 1.47 21.234 2.054 21.818C2.638 22.403 3.335 22.808 4.14 23.113C4.902 23.41 5.775 23.611 7.053 23.671C8.333 23.729 8.741 23.743 12 23.743C15.259 23.743 15.667 23.729 16.947 23.671C18.225 23.611 19.098 23.41 19.86 23.113C20.665 22.808 21.362 22.403 21.946 21.818C22.53 21.234 22.935 20.537 23.24 19.732C23.537 18.97 23.738 18.097 23.798 16.819C23.856 15.539 23.87 15.131 23.87 11.872C23.87 8.613 23.856 8.205 23.798 6.925C23.738 5.647 23.537 4.774 23.24 4.012C22.935 3.207 22.53 2.51 21.946 1.925C21.362 1.34 20.665 0.935 19.86 0.63C19.098 0.333 18.225 0.132 16.947 0.072C15.667 0.014 15.259 0 12 0Z" fill="currentColor"/>
-                  <path d="M12 5.838C8.597 5.838 5.838 8.597 5.838 12C5.838 15.403 8.597 18.162 12 18.162C15.403 18.162 18.162 15.403 18.162 12C18.162 8.597 15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.209 14.209 16 12 16Z" fill="currentColor"/>
-                  <circle cx="18.406" cy="5.594" r="1.44" fill="currentColor"/>
-                </svg>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M23.498 6.186C23.251 5.28 22.546 4.576 21.64 4.329C19.844 3.833 12 3.833 12 3.833C12 3.833 4.156 3.833 2.36 4.329C1.454 4.576 0.749 5.28 0.502 6.186C0.006 7.982 0.006 12 0.006 12C0.006 12 0.006 16.018 0.502 17.814C0.749 18.72 1.454 19.424 2.36 19.671C4.156 20.167 12 20.167 12 20.167C12 20.167 19.844 20.167 21.64 19.671C22.546 19.424 23.251 18.72 23.498 17.814C23.994 16.018 23.994 12 23.994 12C23.994 12 23.994 7.982 23.498 6.186Z" fill="currentColor"/>
-                  <path d="M9.545 15.568L15.818 12L9.545 8.432V15.568Z" fill="white"/>
-                </svg>
-              </a>
+        </section>
+
+        <section className="faq-section" id="faq">
+          <div className="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our products and services</p>
           </div>
+          <div className="faq-container">
+            {faqs.map((faq, index) => (
+              <div key={index} className="faq-item">
+                <button
+                  className="faq-question"
+                  onClick={() => setExpandedFAQ(prev => ({
+                    ...prev,
+                    [index]: !prev[index]
+                  }))}
+                >
+                  <span>{faq.question}</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={expandedFAQ[index] ? 'faq-icon faq-icon--expanded' : 'faq-icon'}
+                  >
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                </button>
+                {expandedFAQ[index] && (
+                  <div className="faq-answer">
+                    <p>{faq.answer}</p>
+          </div>
+                )}
+              </div>
+            ))}
         </div>
       </section>
+
       </main>
 
       <Chatbot />

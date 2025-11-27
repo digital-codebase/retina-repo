@@ -1,9 +1,24 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Footer.css';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowUp, MessageCircle, Rocket } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ onChatWithSalesClick, onNavigateToSection }) {
   const [email, setEmail] = useState('');
+  const location = useLocation();
+  const isProductsPage = location.pathname === '/products';
+
+  const handleSectionClick = (sectionId, e) => {
+    e.preventDefault();
+    if (isProductsPage && onNavigateToSection) {
+      onNavigateToSection(sectionId);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -26,11 +41,24 @@ export default function Footer() {
             Experience the Security, Reliability and Protection your business deserves or let us answer all your questions and help you choose the best solution for you!
           </p>
           <div className="footer-cta__buttons">
-            <a href="#pricing" className="footer-cta__button footer-cta__button--primary">
+            <a 
+              href="#pricing" 
+              className="footer-cta__button footer-cta__button--primary"
+              onClick={(e) => handleSectionClick('pricing', e)}
+            >
               Plans & Pricing
               <Rocket size={16} />
             </a>
-            <a href="#contact-us" className="footer-cta__button footer-cta__button--secondary">
+            <a 
+              href="#contact-us" 
+              className="footer-cta__button footer-cta__button--secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onChatWithSalesClick) {
+                  onChatWithSalesClick();
+                }
+              }}
+            >
               Chat With Sales
               <MessageCircle size={16} />
             </a>
@@ -84,25 +112,25 @@ export default function Footer() {
           <div className="footer-section">
             <h4>SECURITY SERVICES</h4>
             <ul>
-              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Installation Service</a></li>
-              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Maintenance Service</a></li>
-              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>CCTV Consultation Service</a></li>
-              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>Remote Monitoring Service</a></li>
-              <li><a href="#we-offer" onClick={(e) => { e.preventDefault(); document.getElementById('we-offer')?.scrollIntoView({ behavior: 'smooth' }); }}>Digital Lock Service</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#solutions">Solutions</a></li>
-              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#we-offer" onClick={(e) => handleSectionClick('we-offer', e)}>CCTV Installation Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => handleSectionClick('we-offer', e)}>CCTV Maintenance Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => handleSectionClick('we-offer', e)}>CCTV Consultation Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => handleSectionClick('we-offer', e)}>Remote Monitoring Service</a></li>
+              <li><a href="#we-offer" onClick={(e) => handleSectionClick('we-offer', e)}>Digital Lock Service</a></li>
+              <li><a href="#products" onClick={(e) => handleSectionClick('products', e)}>Products</a></li>
+              <li><a href="#solutions" onClick={(e) => handleSectionClick('solutions', e)}>Solutions</a></li>
+              <li><a href="#pricing" onClick={(e) => handleSectionClick('pricing', e)}>Pricing</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
             <h4>ABOUT RETINA</h4>
             <ul>
-              <li><a href="#about">About Retina</a></li>
-              <li><a href="#contact-us">Contact Us</a></li>
-              <li><a href="#press">Case Studies</a></li>
-              <li><a href="#happy-customers">Reviews & Testimonials</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#about" onClick={(e) => handleSectionClick('about', e)}>About Retina</a></li>
+              <li><a href="#contact-us" onClick={(e) => handleSectionClick('contact-us', e)}>Contact Us</a></li>
+              <li><a href="#press" onClick={(e) => handleSectionClick('press', e)}>Case Studies</a></li>
+              <li><a href="#happy-customers" onClick={(e) => handleSectionClick('happy-customers', e)}>Reviews & Testimonials</a></li>
+              <li><a href="#faq" onClick={(e) => handleSectionClick('faq', e)}>FAQ</a></li>
               <li><a href="/privacy">Privacy Policy</a></li>
               <li><a href="/terms">Terms of Service</a></li>
               <li><a href="/cookies">Cookie Policy</a></li>
@@ -112,34 +140,36 @@ export default function Footer() {
           <div className="footer-section">
             <h4>LEARN & GET HELP</h4>
             <ul>
-              <li><a href="#support">Technical Support</a></li>
-              <li><a href="#contact-us">Contact Sales</a></li>
-              <li><a href="#faq">Knowledge Base</a></li>
-              <li><a href="#solutions">Solutions Guide</a></li>
-              <li><a href="#products">Product Catalog</a></li>
+              <li><a href="#support" onClick={(e) => handleSectionClick('support', e)}>Technical Support</a></li>
+              <li><a href="#contact-us" onClick={(e) => { e.preventDefault(); if (onChatWithSalesClick) { onChatWithSalesClick(); } }}>Contact Sales</a></li>
+              <li><a href="#faq" onClick={(e) => handleSectionClick('faq', e)}>Knowledge Base</a></li>
+              <li><a href="#solutions" onClick={(e) => handleSectionClick('solutions', e)}>Solutions Guide</a></li>
+              <li><a href="#products" onClick={(e) => handleSectionClick('products', e)}>Product Catalog</a></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="footer-bottom">
-          <div className="footer-bottom__left">
-            <p>&copy; {new Date().getFullYear()} Retina. All Rights Reserved.</p>
+        
+      </div>
+      <div className="footer-bottom">
+        <div className="footer-bottom__left">
+          <p>&copy; {new Date().getFullYear()} Retina. All Rights Reserved.</p>
+        </div>
+        <div className="footer-bottom__right">
+          <span className="footer-payments-label">Payments We Accept</span>
+          <div className="footer-payment-icons">
+            <span className="footer-payment-icon">PayPal</span>
+            <span className="footer-payment-icon">VISA</span>
+            <span className="footer-payment-icon">Mastercard</span>
           </div>
-          <div className="footer-bottom__right">
-            <span className="footer-payments-label">Payments We Accept</span>
-            <div className="footer-payment-icons">
-              <span className="footer-payment-icon">PayPal</span>
-              <span className="footer-payment-icon">VISA</span>
-              <span className="footer-payment-icon">Mastercard</span>
-            </div>
-          </div>
-          <button className="footer-scroll-top" onClick={handleScrollToTop} aria-label="Scroll to top">
-            <ArrowUp size={20} />
-          </button>
         </div>
       </div>
 
+      {/* Scroll to Top Button */}
+      <button className="footer-scroll-top-fixed" onClick={handleScrollToTop} aria-label="Scroll to top">
+        <ArrowUp size={20} />
+      </button>
     </footer>
   );
 }

@@ -257,7 +257,6 @@
   flex-wrap: wrap;
   gap: 20px;
   background-color: #1a252f;
-  margin: 0 -20px -20px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
@@ -320,6 +319,32 @@
 .footer-scroll-top:hover {
   background-color: #3498db;
   transform: translateY(-2px);
+}
+
+/* Fixed Scroll to Top Button (above chat) */
+.footer-scroll-top-fixed {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background-color: #34495e;
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.4);
+}
+
+.footer-scroll-top-fixed:hover {
+  background-color: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
 }
 
 /* Chat Button */
@@ -402,6 +427,13 @@
   .footer-scroll-top {
     position: static;
     margin-top: 10px;
+  }
+
+  .footer-scroll-top-fixed {
+    bottom: 90px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
   }
 
   .footer-chat-button {

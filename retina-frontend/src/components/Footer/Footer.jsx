@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import './Footer.css';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, ArrowUp, MessageCircle, Rocket } from "lucide-react";
 
-export default function Footer({ onChatWithSalesClick, onNavigateToSection }) {
+export default function Footer({ onChatWithSalesClick, onNavigateToSection, isChatbotOpen }) {
   const [email, setEmail] = useState('');
   const location = useLocation();
   const isProductsPage = location.pathname === '/products';
@@ -167,9 +167,11 @@ export default function Footer({ onChatWithSalesClick, onNavigateToSection }) {
       </div>
 
       {/* Scroll to Top Button */}
-      <button className="footer-scroll-top-fixed" onClick={handleScrollToTop} aria-label="Scroll to top">
-        <ArrowUp size={20} />
-      </button>
+      {!isChatbotOpen && (
+        <button className="footer-scroll-top-fixed" onClick={handleScrollToTop} aria-label="Scroll to top">
+          <ArrowUp size={20} />
+        </button>
+      )}
     </footer>
   );
 }

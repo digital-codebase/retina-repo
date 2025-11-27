@@ -619,7 +619,7 @@ export default function ProductsPage() {
       </main>
 
       <Chatbot externalOpen={chatbotOpen} onOpenChange={setChatbotOpen} />
-      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} onNavigateToSection={navigateToHomeSection} />
+      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} onNavigateToSection={navigateToHomeSection} isChatbotOpen={chatbotOpen} />
     </div>
   );
 }

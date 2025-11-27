@@ -1200,7 +1200,7 @@ export default function HomePage() {
       </main>
 
       <Chatbot externalOpen={chatbotOpen} onOpenChange={setChatbotOpen} />
-      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} />
+      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} isChatbotOpen={chatbotOpen} />
     </div>
   );
 }

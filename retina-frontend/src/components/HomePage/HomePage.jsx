@@ -487,6 +487,7 @@ export default function HomePage() {
   const [trendingIndex, setTrendingIndex] = useState(0);
   const trendingIntervalRef = useRef(null);
   const [expandedFAQ, setExpandedFAQ] = useState({});
+  const [chatbotOpen, setChatbotOpen] = useState(false);
   
   // Auto-scroll trending products
   useEffect(() => {
@@ -578,7 +579,7 @@ export default function HomePage() {
           <div className="homepage-hero__content">
             <span className="badge">Professional Security Solutions</span>
             
-            <h1>Advanced CCTV & Security Solutions for Complete Protection</h1>
+            <h1>Advanced CCTV & Security Solutions for Complete Protection</h1> 
             <p>
               Retina delivers end-to-end security services, professional installations, and platform enablement tailored to
               your security needs. Accelerate innovation while staying reliable, secure, and cost-efficient.
@@ -1065,7 +1066,7 @@ export default function HomePage() {
         </div>
       </section>
 
-        <section className="press">
+        <section id="press" className="press">
           <div className="press__header">
             <div className="press__header-left">
               <h2>Explore Our Case Studies</h2>
@@ -1198,8 +1199,8 @@ export default function HomePage() {
 
       </main>
 
-      <Chatbot />
-      <Footer />
+      <Chatbot externalOpen={chatbotOpen} onOpenChange={setChatbotOpen} />
+      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} />
     </div>
   );
 }

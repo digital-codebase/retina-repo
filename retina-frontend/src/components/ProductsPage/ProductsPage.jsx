@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MainNavigation from '../MainNavigation/MainNavigation';
 import Footer from '../Footer/Footer';
 import TopNavigation from '../TopNavigation/TopNavigation';
+import Chatbot from '../Chatbot/Chatbot';
 import './ProductsPage.css';
 
 // Product list with filter properties (same as in HomePage)
@@ -191,6 +192,7 @@ const allProducts = [
 
 export default function ProductsPage() {
   const navigate = useNavigate();
+  const [chatbotOpen, setChatbotOpen] = useState(false);
   
   const handleBackToProducts = () => {
     navigate('/');
@@ -199,6 +201,17 @@ export default function ProductsPage() {
       const productsSection = document.getElementById('products');
       if (productsSection) {
         productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  // Helper function to navigate to homepage section
+  const navigateToHomeSection = (sectionId) => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 100);
   };
@@ -605,7 +618,8 @@ export default function ProductsPage() {
         </section>
       </main>
 
-      <Footer />
+      <Chatbot externalOpen={chatbotOpen} onOpenChange={setChatbotOpen} />
+      <Footer onChatWithSalesClick={() => setChatbotOpen(true)} onNavigateToSection={navigateToHomeSection} />
     </div>
   );
 }

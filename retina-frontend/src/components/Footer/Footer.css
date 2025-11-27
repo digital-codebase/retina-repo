@@ -278,6 +278,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  padding-right: 100px; /* Add padding to prevent chatbot overlap */
 }
 
 .footer-payments-label {
@@ -422,6 +423,7 @@
   .footer-bottom__right {
     flex-direction: column;
     gap: 10px;
+    padding-right: 0; /* Remove padding on mobile */
   }
 
   .footer-scroll-top {
